@@ -25,13 +25,91 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="switchBarItem" destination="ApP-B4-YUP" id="vFW-YS-0t9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4688.4057971014499" y="88.392857142857139"/>
+        </scene>
+        <!--FirstVC-->
+        <scene sceneID="sc1-bn-uVB">
+            <objects>
+                <viewController storyboardIdentifier="firstVcSb" id="taQ-B9-qVe" customClass="FirstVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJw-DQ-3Vp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-PD-KSp">
+                                <rect key="frame" x="192" y="437.5" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eYP-x3-nAy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dnv-PD-KSp" firstAttribute="centerY" secondItem="MJw-DQ-3Vp" secondAttribute="centerY" id="ESp-Np-rcq"/>
+                            <constraint firstItem="Dnv-PD-KSp" firstAttribute="centerX" secondItem="MJw-DQ-3Vp" secondAttribute="centerX" id="bHI-ub-6tZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIG-GQ-1zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5609" y="100"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="KNl-Bn-eHg">
+            <objects>
+                <viewController storyboardIdentifier="secondVcSb" id="isM-Ba-yXa" customClass="SecondVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XOH-XP-FDL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7u-xR-sdc">
+                                <rect key="frame" x="179" y="437.5" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3yy-EG-hF3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j7u-xR-sdc" firstAttribute="centerX" secondItem="XOH-XP-FDL" secondAttribute="centerX" id="WFh-zE-lwQ"/>
+                            <constraint firstItem="j7u-xR-sdc" firstAttribute="centerY" secondItem="XOH-XP-FDL" secondAttribute="centerY" id="qUp-Ni-XBj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIk-Hn-aA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6500" y="100"/>
+        </scene>
+        <!--ThirdVC-->
+        <scene sceneID="jwG-G3-txx">
+            <objects>
+                <viewController storyboardIdentifier="thirdVcSb" id="5VA-4e-DPk" customClass="ThirdVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o88-8h-0c8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="third" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-L6-GHE">
+                                <rect key="frame" x="189.5" y="437.5" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GaF-5p-h7I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wgr-L6-GHE" firstAttribute="centerX" secondItem="o88-8h-0c8" secondAttribute="centerX" id="8E3-pf-fUx"/>
+                            <constraint firstItem="wgr-L6-GHE" firstAttribute="centerY" secondItem="o88-8h-0c8" secondAttribute="centerY" id="VgT-ag-Mcf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m56-uc-LUi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7384.057971014493" y="95.758928571428569"/>
         </scene>
         <!--Item-->
         <scene sceneID="jfB-dS-t5b">
