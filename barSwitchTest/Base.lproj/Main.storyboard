@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ohm-ss-VhZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,10 +18,39 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ApP-B4-YUP">
+                        <barButtonItem key="rightBarButtonItem" title="switch" id="iWt-7O-u7C">
+                            <connections>
+                                <action selector="switchBarPress:" destination="BYZ-38-t0r" id="vbh-u5-6WT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="switchBarItem" destination="ApP-B4-YUP" id="vFW-YS-0t9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4688.4057971014499" y="88.392857142857139"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="jfB-dS-t5b">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u94-eF-ies" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ohm-ss-VhZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uKe-X9-uUR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="grG-Jd-uAc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NS0-s2-R3N"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="3778.2608695652175" y="88.392857142857139"/>
         </scene>
     </scenes>
     <resources>
