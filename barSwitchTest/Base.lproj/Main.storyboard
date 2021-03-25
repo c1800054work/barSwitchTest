@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ohm-ss-VhZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BC9-F8-L5l">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,32 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ApP-B4-YUP">
-                        <barButtonItem key="rightBarButtonItem" title="switch" id="iWt-7O-u7C">
-                            <connections>
-                                <action selector="switchBarPress:" destination="BYZ-38-t0r" id="vbh-u5-6WT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4688.4057971014499" y="88.392857142857139"/>
-        </scene>
         <!--FirstVC-->
         <scene sceneID="sc1-bn-uVB">
             <objects>
-                <viewController storyboardIdentifier="firstVcSb" id="taQ-B9-qVe" customClass="FirstVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstVcSb" title="FirstVC" id="taQ-B9-qVe" customClass="FirstVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MJw-DQ-3Vp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,15 +30,22 @@
                             <constraint firstItem="Dnv-PD-KSp" firstAttribute="centerX" secondItem="MJw-DQ-3Vp" secondAttribute="centerX" id="bHI-ub-6tZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="FirstVC" id="kmz-Au-C57">
+                        <barButtonItem key="rightBarButtonItem" title="switch" id="ZyZ-9b-2sU">
+                            <connections>
+                                <action selector="switchBtnPress:" destination="taQ-B9-qVe" id="iHf-Sr-d1c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIG-GQ-1zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5609" y="100"/>
+            <point key="canvasLocation" x="6504.347826086957" y="844.41964285714278"/>
         </scene>
         <!--SecondVC-->
         <scene sceneID="KNl-Bn-eHg">
             <objects>
-                <viewController storyboardIdentifier="secondVcSb" id="isM-Ba-yXa" customClass="SecondVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVcSb" title="SecondVC" id="isM-Ba-yXa" customClass="SecondVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XOH-XP-FDL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +72,7 @@
         <!--ThirdVC-->
         <scene sceneID="jwG-G3-txx">
             <objects>
-                <viewController storyboardIdentifier="thirdVcSb" id="5VA-4e-DPk" customClass="ThirdVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="thirdVcSb" title="ThirdVC" id="5VA-4e-DPk" customClass="ThirdVC" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o88-8h-0c8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,12 +83,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drJ-JW-7ty">
+                                <rect key="frame" x="175" y="463" width="64" height="30"/>
+                                <state key="normal" title="Press Me">
+                                    <color key="titleColor" systemColor="systemPurpleColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yuj-58-S1q" kind="show" id="pBS-i0-eh1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GaF-5p-h7I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wgr-L6-GHE" firstAttribute="centerX" secondItem="o88-8h-0c8" secondAttribute="centerX" id="8E3-pf-fUx"/>
+                            <constraint firstItem="drJ-JW-7ty" firstAttribute="centerX" secondItem="o88-8h-0c8" secondAttribute="centerX" id="S4W-lQ-don"/>
                             <constraint firstItem="wgr-L6-GHE" firstAttribute="centerY" secondItem="o88-8h-0c8" secondAttribute="centerY" id="VgT-ag-Mcf"/>
+                            <constraint firstItem="drJ-JW-7ty" firstAttribute="centerY" secondItem="o88-8h-0c8" secondAttribute="centerY" constant="30" id="rDb-GL-onQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -111,29 +107,62 @@
             </objects>
             <point key="canvasLocation" x="7384.057971014493" y="95.758928571428569"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="jfB-dS-t5b">
+        <!--View Controller-->
+        <scene sceneID="XaF-m7-WeA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u94-eF-ies" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ohm-ss-VhZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uKe-X9-uUR"/>
+                <viewController id="yuj-58-S1q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJp-Fr-SIY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="nT6-eT-lUO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Rl-CD-1C0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="956-de-5At" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8284" y="96"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eDZ-Yb-dBv">
+            <objects>
+                <viewController id="BC9-F8-L5l" customClass="ViewController" customModule="barSwitchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5xg-30-sEP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="aJD-1B-qnp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVp-VJ-c46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4626" y="96"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lhN-LC-pr4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MiM-tE-RRB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="grG-Jd-uAc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6c2-E9-pNh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NS0-s2-R3N"/>
+                        <segue destination="taQ-B9-qVe" kind="relationship" relationship="rootViewController" id="wxk-Sa-xie"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEY-3M-6S4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3778.2608695652175" y="88.392857142857139"/>
+            <point key="canvasLocation" x="5592.753623188406" y="843.75"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

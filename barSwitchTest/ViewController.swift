@@ -19,6 +19,11 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default
+            .addObserver(self,
+                         selector: #selector(switchBarPress),
+                         name: NSNotification.Name("switchTabBar"),
+                         object: nil)
         setTabBar()
     }
     
@@ -26,42 +31,58 @@ class ViewController: UITabBarController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let firstVC = storyboard.instantiateViewController(withIdentifier: "firstVcSb") as? FirstVC else{
-            assertionFailure("[AssertionFailure] StoryBoard: firstVcSb can't find!! (ViewController)")
+            assertionFailure("[AssertionFailure] StoryBoard: firstVcSb can't find!! (UITabBarController)")
             return
         }
         guard let secondVC = storyboard.instantiateViewController(withIdentifier: "secondVcSb") as? SecondVC else{
-            assertionFailure("[AssertionFailure] StoryBoard: secondVcSb can't find!! (ViewController)")
+            assertionFailure("[AssertionFailure] StoryBoard: secondVcSb can't find!! (UITabBarController)")
             return
         }
         guard let thirdVC = storyboard.instantiateViewController(withIdentifier: "thirdVcSb") as? ThirdVC else{
-            assertionFailure("[AssertionFailure] StoryBoard: thirdVcSb can't find!! (ViewController)")
+            assertionFailure("[AssertionFailure] StoryBoard: thirdVcSb can't find!! (UITabBarController)")
             return
         }
-        
-        firstVC.title = "firstVC"
-        secondVC.title = "secondVC"
-        thirdVC.title = "thirdVC"
-        
+        self.tabBar.tintColor = .green
         switch pageType {
         case .three:
-            pageList = [firstVC,secondVC,thirdVC]
-            imageList = ["folder","trash","pencil"]
+            viewControllers = [
+                createTabBarItem(tabBarTitle: "firstVC",
+                                 tabBarImage: "folder",
+                                 viewController: firstVC),
+                createTabBarItem(tabBarTitle: "secondVC",
+                                 tabBarImage: "trash",
+                                 viewController: secondVC),
+                createTabBarItem(tabBarTitle: "thirdVC",
+                                 tabBarImage: "pencil",
+                                 viewController: thirdVC),
+            ]
         case .two:
-            pageList = [firstVC,secondVC]
-            imageList = ["folder","trash"]
+            viewControllers = [
+                createTabBarItem(tabBarTitle: "firstVC",
+                                 tabBarImage: "folder",
+                                 viewController: firstVC),
+                createTabBarItem(tabBarTitle: "thirdVC",
+                                 tabBarImage: "pencil",
+                                 viewController: thirdVC),
+            ]
         }
-        self.setViewControllers(pageList, animated: false)
-        let count = imageList.count - 1
-        guard let items = self.tabBar.items else { return }
-        
-        for x in 0...count {
-            items[x].image = UIImage(systemName: imageList[x])
-        }
-        
-        self.tabBar.tintColor = .green
     }
     
-    @IBAction func switchBarPress(_ sender: UIBarButtonItem) {
+    func createTabBarItem(tabBarTitle: String, tabBarImage: String, viewController: UIViewController) -> UINavigationController{
+        let navCont = UINavigationController(rootViewController: viewController)
+
+        navCont.tabBarItem.title = tabBarTitle
+        navCont.tabBarItem.image = UIImage(systemName: tabBarImage)
+
+        // Nav Bar Customisation
+        navCont.navigationBar.barTintColor = .green
+        navCont.navigationBar.tintColor = .red
+        navCont.navigationBar.isTranslucent = false
+
+        return navCont
+    }
+    
+    @objc func switchBarPress() {
         switch pageType {
         case .three:
             pageType = .two
@@ -76,6 +97,10 @@ class FirstVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+    }
+    
+    @IBAction func switchBtnPress(_ sender: UIBarButtonItem) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "switchTabBar"), object: nil, userInfo:nil)
     }
 }
 
