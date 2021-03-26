@@ -7,8 +7,16 @@
 
 import UIKit
 
-enum PageType {
-    case two,three
+enum PageType: String {
+    case two = "two"
+    case three = "three"
+}
+
+class PageVariables: NSObject {
+    static let shared = PageVariables()
+    private override init() {}
+    
+    var pageType: PageType = .three
 }
 
 class ViewController: UITabBarController {
@@ -21,7 +29,7 @@ class ViewController: UITabBarController {
         super.viewDidLoad()
         NotificationCenter.default
             .addObserver(self,
-                         selector: #selector(switchBarPress),
+                         selector: #selector(switchBarPress(noti:)),
                          name: NSNotification.Name("switchTabBar"),
                          object: nil)
         setTabBar()
@@ -78,28 +86,41 @@ class ViewController: UITabBarController {
         navCont.navigationBar.barTintColor = .green
         navCont.navigationBar.tintColor = .red
         navCont.navigationBar.isTranslucent = false
-
+        
         return navCont
     }
     
-    @objc func switchBarPress() {
+    @objc func switchBarPress(noti: Notification) {
+        pageType = PageVariables.shared.pageType
+        setTabBar()
+        navigationController?.loadView()
+    }
+}
+
+class FirstVC: UIViewController{
+    var pageType: PageType = .three
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let switchItem = UIBarButtonItem(title: "Switch", style: .plain, target: self, action: #selector(switchBarBtnFnc))
+        navigationItem.rightBarButtonItems = [switchItem]
+        view.backgroundColor = .red
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pageType = PageVariables.shared.pageType
+        navigationItem.title = PageVariables.shared.pageType.rawValue
+    }
+    
+    @objc func switchBarBtnFnc()  {
         switch pageType {
         case .three:
             pageType = .two
         case .two:
             pageType = .three
         }
-        setTabBar()
-    }
-}
-
-class FirstVC: UIViewController{
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
-    }
-    
-    @IBAction func switchBtnPress(_ sender: UIBarButtonItem) {
+        PageVariables.shared.pageType = pageType
         NotificationCenter.default.post(name: Notification.Name(rawValue: "switchTabBar"), object: nil, userInfo:nil)
     }
 }
