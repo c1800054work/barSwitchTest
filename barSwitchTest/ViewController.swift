@@ -109,7 +109,7 @@ class FirstVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         pageType = PageVariables.shared.pageType
-        self.title = PageVariables.shared.pageType.rawValue
+        self.title = pageType.rawValue
     }
     
     override func viewDidAppear(_ animated: Bool) {
