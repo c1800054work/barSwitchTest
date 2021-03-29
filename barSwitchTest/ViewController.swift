@@ -93,7 +93,6 @@ class ViewController: UITabBarController {
     @objc func switchBarPress(noti: Notification) {
         pageType = PageVariables.shared.pageType
         setTabBar()
-        navigationController?.loadView()
     }
 }
 
@@ -110,9 +109,13 @@ class FirstVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         pageType = PageVariables.shared.pageType
-        navigationItem.title = PageVariables.shared.pageType.rawValue
+        self.title = PageVariables.shared.pageType.rawValue
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = self.title
+    }
     @objc func switchBarBtnFnc()  {
         switch pageType {
         case .three:
