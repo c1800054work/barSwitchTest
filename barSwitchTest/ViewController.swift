@@ -116,6 +116,7 @@ class FirstVC: UIViewController{
         super.viewDidAppear(animated)
         self.navigationController?.navigationBar.topItem?.title = self.title
     }
+    
     @objc func switchBarBtnFnc()  {
         switch pageType {
         case .three:
